@@ -1,0 +1,5 @@
+importScripts('https://www.gstatic.com/firebasejs/11.3.0/firebase-app-compat.js','https://www.gstatic.com/firebasejs/11.3.0/firebase-messaging-compat.js');
+firebase.initializeApp({apiKey:'AIzaSyAD5Rff9jZZE27-8oyj2OONAVTnaiBxUeo',authDomain:'aletwende.firebaseapp.com',databaseURL:'https://aletwende-default-rtdb.firebaseio.com',projectId:'aletwende',storageBucket:'aletwende.firebasestorage.app',messagingSenderId:'142861545293',appId:'1:142861545293:web:7cefd83f005dc12de19104'});
+const messaging=firebase.messaging();
+messaging.onBackgroundMessage((payload)=>{if(payload.notification)return;const data=payload.data||{};self.registration.showNotification(data.title||'Aletwende Store',{body:data.body||'You have an update',tag:data.orderId||data.callId,renotify:true,requireInteraction:true,vibrate:[300,100,300,100,600]})});
+self.addEventListener('notificationclick',(event)=>{event.notification.close();event.waitUntil(clients.matchAll({type:'window',includeUncontrolled:true}).then((list)=>{const client=list[0];return client?client.focus():clients.openWindow('/')}))});
