@@ -1,84 +1,53 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-
-@custom-variant dark (&:is(.dark *));
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #f0f2f5;
-  --foreground: #1a1a2e;
-  --card: #ffffver: #ffffff;
-  --popover-foreground: #1a1a2e;
-  --primary: #1a73e8;
-  --primary-foreground: #ffffff;
-  --secondary: #f0f2f5;
-  --secondary-foreground: #1a1a2e;
-  --muted: #f0f2f5;
-  --muted-foreground: #6b7280;
-  --accent: #f0f2f5;
-  --accent-foreground: #1a1a2e;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #e5e7eb;
-  --input: #e5e7eb;
-  --ring: #1a73e8;
-  --chart-1: #1a73e8;
-  --chart-2: #22c55e;
-  --chart-3: #f97316;
-  --chart-4: #eab308;
-  --chart-5: #ef4444;
+  --background: 240 242 245;
+  --foreground: 26 26 46;
+  --card: 255 255 255;
+  --card-foreground: 26 26 46;
+  --popover: 255 255 255;
+  --popover-foreground: 26 26 46;
+  --primary: 26 115 232;
+  --primary-foreground: 255 255 255;
+  --secondary: 240 242 245;
+  --secondary-foreground: 26 26 46;
+  --muted: 240 242 245;
+  --muted-foreground: 107 114 128;
+  --accent: 240 242 245;
+  --accent-foreground: 26 26 46;
+  --destructive: 239 68 68;
+  --destructive-foreground: 255 255 255;
+  --border: 229 231 235;
+  --input: 229 231 235;
+  --ring: 26 115 232;
+  --chart-1: 26 115 232;
+  --chart-2: 34 197 94;
+  --chart-3: 249 115 22;
+  --chart-4: 234 179 8;
+  --chart-5: 239 68 68;
   --radius: 0.75rem;
-  --status-pending: #f97316;
-  --status-accepted: #1a73e8;
-  --status-completed: #22c55e;
-  --status-new: #ef4444;
-  --nav-bg: #ffffff;
-  --nav-foreground: #6b7280;
-  --nav-active: #1a73e8;
-}
-
-@theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-status-pending: var(--status-pending);
-  --color-status-accepted: var(--status-accepted);
-  --color-status-completed: var(--status-completed);
-  --color-status-new: var(--status-new);
-  --color-nav-bg: var(--nav-bg);
-  --color-nav-foreground: var(--nav-foreground);
-  --color-nav-active: var(--nav-active);
+  --status-pending: 249 115 22;
+  --status-accepted: 26 115 232;
+  --status-completed: 34 197 94;
+  --status-new: 239 68 68;
+  --nav-bg: 255 255 255;
+  --nav-foreground: 107 114 128;
+  --nav-active: 26 115 232;
+  --sidebar: 255 255 255;
+  --sidebar-foreground: 26 26 46;
+  --sidebar-primary: 26 115 232;
+  --sidebar-primary-foreground: 255 255 255;
+  --sidebar-accent: 240 242 245;
+  --sidebar-accent-foreground: 26 26 46;
+  --sidebar-border: 229 231 235;
+  --sidebar-ring: 26 115 232;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
